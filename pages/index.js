@@ -1,10 +1,15 @@
-const Home = () => {
+import { Header, Hero, Portfolio, About, Contact } from '../components';
 
+const Home = () => {
   return (
     <>
-      <h1>Home</h1>
+      <Header />
+      <Hero />
+      <Portfolio />
+      <About />
+      <Contact />
     </>
   );
 };
 
-export default Home
+export default Home;
