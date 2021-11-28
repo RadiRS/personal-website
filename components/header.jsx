@@ -1,31 +1,32 @@
 import Link from 'next/link';
+
 const Navbar = () => {
   const menus = [
-    { name: 'Home', isActive: true, href: '/' },
+    { name: 'Home', isActive: true, href: '#' },
     { name: 'Portfolio', isActive: false, href: '#portfolio' },
-    { name: 'Abaut', isActive: false, href: '#about' },
-    { name: 'Hire Me', isActive: false, href: '#hireme' },
+    { name: 'About', isActive: false, href: '#about' }
+    //{ name: 'Hire me', isActive: false, href: '#hireme', custom: true }
   ];
 
   return (
-    <div
-      style={{
-        display: 'flex',
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-      }}
-    >
-      <Link href="/">
-        <a>RADI RUSADI</a>
-      </Link>
-      <div>
-        {menus.map((item) => (
-          <Link href={item.href} key={item.href}>
-            <a>{item.name}</a>
-          </Link>
-        ))}
+    <nav className="navbar">
+      <div className="navbar-container">
+        <Link href="/">
+          <a className="navbar-brand">RADI RUSADI</a>
+        </Link>
+        <div className="navbar-nav-right">
+          {menus.map((item) => (
+            <a className="text-selected-text" key={item.href} href={item.href}>
+              {item.name}
+            </a>
+          ))}
+          <a href="#hireme">
+            <button className="btn box-shadow">Hire me</button>
+          </a>
+        </div>
       </div>
-    </div>
+      <div className="navbar-border" />
+    </nav>
   );
 };
 
