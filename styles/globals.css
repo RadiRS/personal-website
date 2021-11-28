@@ -1,38 +1,3 @@
-/* Fonts */
-@font-face {
-  font-family: 'Monserrat';
-  src: url('/static/fonts/Montserrat-Regular.ttf');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Monserrat';
-  src: url('/static/fonts/Montserrat-SemiBold.ttf');
-  font-weight: 600;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Monserrat';
-  src: url('/static/fonts/Montserrat-Bold.ttf');
-  font-weight: bold;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Monserrat';
-  src: url('/static/fonts/Montserrat-Light.ttf');
-  font-weight: lighter;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Monserrat';
-  src: url('/static/fonts/Montserrat-Italic.ttf');
-  font-weight: normal;
-  font-style: italic;
-}
-
 /* Colors */
 :root {
   --color-primary: #5e3719;
@@ -43,7 +8,19 @@
   --color-border: #f3c99a;
 }
 
+/* Fonts */
+@import '_fonts.css';
+
+/* Components */
+@import '_header.css';
+@import '_button.css';
+@import '_section.css';
+
 /* Global */
+html {
+  scroll-behavior: smooth;
+}
+
 html,
 body {
   font-family: Monserrat, sans-serif;
@@ -62,84 +39,13 @@ a {
   box-sizing: border-box;
 }
 
-/* Navbar */
-.navbar {
-  padding: 23px;
-  height: auto;
-  width: 100%;
+p {
+  margin: 5px 0;
+  line-height: 1.7;
 }
 
-.navbar-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1440px;
-  margin: 0 auto;
-  margin-bottom: 23px;
-}
-
-.navbar-border {
-  height: 2px;
-  background-color: var(--color-secondary);
-  max-width: 1440px;
-  margin: 0 auto;
-  opacity: 0.27;
-}
-
-.navbar a:hover {
-  color: var(--color-secondary);
-}
-
-.navbar-brand {
-  font-size: 20px;
-  font-weight: 600;
-}
-
-.navbar-nav-right a {
-  font-weight: bold;
-  font-size: 15px;
-  margin-left: 41px;
-}
-
-.box-shadow {
-  box-shadow: -5px 5px 6px #00000029;
-}
-
-/* Button */
-.btn {
-  display: inline-block;
-  background-color: var(--color-secondary);
-  padding: 8px 16px;
-  border: none;
-  color: var(--color-primary);
-  font-weight: bold;
-  font-size: 18px;
-  cursor: pointer;
-  text-align: center;
-  text-decoration: none;
-}
-
-/* Text Styling */
-.text-center {
-  text-align: center;
-}
-
-.text-xl {
-  font-size: 30px;
-  font-weight: bold;
-}
-
-.text-lg {
-  font-size: 20px;
-  line-height: 30px;
-}
-
-.text-md {
-  font-size: 16px;
-}
-
-.text-sm {
-  font-size: 14px;
+h1 {
+  margin: 15px 0;
 }
 
 /* Box */
@@ -150,24 +56,8 @@ a {
 }
 
 .box-inner {
+  margin: 0 auto;
   max-width: 1440px;
-  margin: 0 auto;
-}
-
-.box-text {
-  max-width: 500px;
-  text-align: center;
-  justify-self: center;
-  padding: 20px 0;
-  margin: 0 auto;
-}
-
-.box-text .btn {
-  margin-top: 20px;
-}
-
-.box-f .box-text {
-  max-width: 600px;
 }
 
 /* Grid Styles */
@@ -192,4 +82,12 @@ a {
 }
 .py-lg {
   padding: 40px 0;
+}
+
+/* Footer & Social */
+.footer-container {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 50px 23px;
 }

@@ -1,0 +1,13 @@
+/* Section */
+.section-line {
+  width: 30px;
+  height: 2px;
+  background-color: var(--color-secondary);
+  margin-left: 16px;
+}
+
+.wrapper-between {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}

@@ -1,8 +1,12 @@
 const Footer = () => {
+  const year = new Date().getFullYear();
+
   return (
-    <>
-      <div>Footer</div>
-    </>
+    <footer className="footer">
+      <div className="footer-container">
+        <div>{`© ${year} Radi Rusadi. All Rights Reserved`}</div>
+      </div>
+    </footer>
   );
 };
 
