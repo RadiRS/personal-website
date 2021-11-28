@@ -1,14 +1,13 @@
-import { Header, Hero, Portfolio, About, Contact } from '../components';
+import { Hero, Portfolio, About, Contact, Layout } from '../components';
 
 const Home = () => {
   return (
-    <>
-      <Header />
+    <Layout>
       <Hero />
       <Portfolio />
       <About />
       <Contact />
-    </>
+    </Layout>
   );
 };
 
