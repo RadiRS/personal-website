@@ -56,6 +56,10 @@
   font-size: 14px;
 }
 
+.text-semi-bold {
+  font-weight: 600;
+}
+
 .uppercase {
   text-transform: uppercase;
 }
