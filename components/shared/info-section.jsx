@@ -1,7 +1,7 @@
 const InfoSection = ({ section, title, desc }) => {
   return (
     <>
-      <div className="wrapper-between mb">
+      <div className="wrapper-between-center mb">
         <div className="text-md uppercase">{section}</div>
         <div className="section-line" />
       </div>

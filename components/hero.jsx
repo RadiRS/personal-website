@@ -3,7 +3,7 @@ import Image from 'next/image';
 const Hero = () => {
   return (
     <section className="box">
-      <div className="box-inner grid-col-2 py-lg">
+      <div className="box-inner grid-col-2 py-lg align-center">
         <div>
           <h1 className="text-xl">{`Hey there, I'm Radi`}</h1>
           <p className="text-lg">

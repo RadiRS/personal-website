@@ -9,5 +9,26 @@
 .wrapper-between {
   display: flex;
   flex-direction: row;
+}
+.wrapper-between-center {
+  display: flex;
+  flex-direction: row;
   align-items: center;
+}
+
+.relative {
+  position: relative;
+}
+
+.img-profile-container{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.img-profile {
+  mix-blend-mode: hard-light;
+}
+
+.mw-100 {
+  min-width: 100px;
 }
