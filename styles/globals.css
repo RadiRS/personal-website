@@ -127,3 +127,28 @@ h1 {
   margin: 0 auto;
   padding: 50px 23px;
 }
+
+/* Form */
+input {
+  width: 100%;
+  height: 50px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  font-family: Monserrat;
+  font-size: 14px;
+  background-color: #F7F7FF;
+  resize: none;
+  border: none;
+}
+
+textarea {
+  width: 100%;
+  height: 150px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  font-family: Monserrat;
+  font-size: 14px;
+  background-color: #F7F7FF;
+  resize: none;
+  border: none;
+}

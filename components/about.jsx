@@ -47,7 +47,7 @@ const About = () => {
               </div>
             ))}
           </div>
-          <div>
+          <div className="mb-md">
             <p className="text-md">Get in touch</p>
             <div className="wrapper-between">
               <a
@@ -75,6 +75,9 @@ const About = () => {
                 <FaInstagram color="#F2D0A4" size={33} />
               </a>
             </div>
+          </div>
+          <div>
+            <a href="#">Get CV</a>
           </div>
         </div>
         <div className="img-profile-container" style={{ alignItems: 'center' }}>
