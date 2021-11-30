@@ -53,7 +53,7 @@ h1 {
 /* Box */
 .box {
   padding: 50px 23px;
-  padding-left: 20px;
+  /*padding-left: 20px;*/
   margin-bottom: 30px;
 }
 
@@ -87,7 +87,6 @@ h1 {
   display: flex;
 }
 
-
 /* Padding */
 .py-sm {
   padding: 10px 0;
@@ -114,6 +113,9 @@ h1 {
   margin-bottom: 40px;
 }
 
+.mr-sm {
+  margin-right: 10px;
+}
 .mr-lg {
   margin-right: 40px;
 }
@@ -125,4 +127,3 @@ h1 {
   margin: 0 auto;
   padding: 50px 23px;
 }
-
