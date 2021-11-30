@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import { FaGithub, FaInstagram, FaLinkedinIn, FaCircle } from 'react-icons/fa';
+import Image from 'next/image';
 import InfoSection from './shared/info-section';
 
 import user from '../static/data/user.js';
@@ -8,16 +9,16 @@ const About = () => {
   return (
     <section id="about" className="box">
       <div className="box-inner grid-col-2">
-        <div style={{ width: '110%' }}>
+        <div>
           <InfoSection
             section="About Me"
             title={user.name}
             desc={user.description}
           />
-          <div className="grid-col-2 mb-md">
-            <div>
+          <div className="mb-md">
+            <div className="mb-md">
               <p className="text-md">Programming Language</p>
-              <div className="grid-col-2">
+              <div className="grid-col">
                 {user.skill.programming.map((item) => (
                   <div key={item} className="wrapper-between-center">
                     <FaCircle color="#1E91D6" className="mr-sm" size={12} />
@@ -28,7 +29,7 @@ const About = () => {
             </div>
             <div>
               <p className="text-md">Framework</p>
-              <div className="grid-col-2">
+              <div className="grid-col">
                 {user.skill.framework.map((item) => (
                   <div key={item} className="wrapper-between-center">
                     <FaCircle color="#1E91D6" className="mr-sm" size={12} />
@@ -80,8 +81,8 @@ const About = () => {
             <a href="#">Get CV</a>
           </div>
         </div>
-        <div className="img-profile-container" style={{ alignItems: 'center' }}>
-          <img
+        <div className="img-profile-container">
+          <Image
             className="img-profile"
             alt="img-profile"
             width={340}

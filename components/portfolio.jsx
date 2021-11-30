@@ -16,16 +16,18 @@ const Portfolio = () => {
         <div className="grid-col-2 mt-lg">
           {portfolios.map((item) => (
             <div key={item.id} className="portfolio-card">
-              <Link href={`/portfolio?${item.id}`}>
-                <a>
+              <div className="mb-md">
+                <Link href={`/portfolio?${item.id}`} passHref>
                   <Image
+                    alt=""
+                    layout="responsive"
+                    objectFit="fill"
                     width={500}
                     height={350}
-                    alt=""
                     src={item.images.banner}
                   />
-                </a>
-              </Link>
+                </Link>
+              </div>
               <h2 className="text-lg">{item.title}</h2>
               <p className="text-md">{item.description}</p>
               <div className="wrapper-between">

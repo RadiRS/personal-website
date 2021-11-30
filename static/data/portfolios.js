@@ -46,7 +46,7 @@ const portfolios = [
     description:
       'Messenger application with bonus feature like payment & transactions',
     platform: 'Android',
-    times: '2019 - 2021',
+    times: '2019',
     tech: ['React Native'],
     links: [
       {

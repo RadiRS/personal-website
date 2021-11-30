@@ -20,9 +20,10 @@
   position: relative;
 }
 
-.img-profile-container{
+.img-profile-container {
   display: flex;
   justify-content: flex-end;
+  align-items: center;
 }
 
 .img-profile {
