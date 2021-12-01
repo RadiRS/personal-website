@@ -11,6 +11,11 @@ const Navbar = () => {
     { name: 'About', isActive: false, href: '#about' }
   ];
 
+  const onToggleNav = () => {
+    setIsVisible(!isVisible);
+    document.body.classList.toggle('no-scroll')
+  }
+
   return (
     <>
       <nav className="navbar">
@@ -33,7 +38,7 @@ const Navbar = () => {
             type="button"
             className={`hamburger ${isVisible ? 'open' : ''}`}
             id="menu-btn"
-            onClick={() => setIsVisible(!isVisible)}
+            onClick={onToggleNav}
           >
             <span className="hamburger-top"></span>
             <span className="hamburger-middle"></span>
@@ -45,11 +50,11 @@ const Navbar = () => {
 
       <div className={`mobile-menu ${isVisible ? '' : 'hidden'}`} id="menu">
         {menus.map((item) => (
-          <div key={item.href} onClick={() => setIsVisible(!isVisible)}>
+          <div key={item.href} onClick={onToggleNav}>
             <a href={item.href}>{item.name}</a>
           </div>
         ))}
-        <div onClick={() => setIsVisible(!isVisible)}>
+        <div onClick={onToggleNav}>
           <a href="#hireme">
             <button className="btn box-shadow">Hire me</button>
           </a>

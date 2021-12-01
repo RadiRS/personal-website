@@ -207,6 +207,10 @@ textarea {
   .footer {
     text-align: center;
   }
+
+  .btn {
+    width: 100%;
+  }
 }
 
 @media (min-width: 1440px) {
