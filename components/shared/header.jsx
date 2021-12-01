@@ -1,13 +1,14 @@
 import { useState } from 'react';
 import Link from 'next/link';
 
+import user from '../../static/data/user';
+
 const Navbar = () => {
   const [isVisible, setIsVisible] = useState(false);
   const menus = [
     { name: 'Home', isActive: true, href: '#' },
     { name: 'Portfolio', isActive: false, href: '#portfolio' },
     { name: 'About', isActive: false, href: '#about' }
-    //{ name: 'Hire me', isActive: false, href: '#hireme', custom: true }
   ];
 
   return (
@@ -15,15 +16,11 @@ const Navbar = () => {
       <nav className="navbar">
         <div className="navbar-container">
           <Link href="/">
-            <a className="navbar-brand">RADI RUSADI</a>
+            <a className="navbar-brand">{user.name}</a>
           </Link>
           <div className="navbar-nav-right">
             {menus.map((item) => (
-              <a
-                //className="text-selected-text"
-                key={item.href}
-                href={item.href}
-              >
+              <a key={item.href} href={item.href}>
                 {item.name}
               </a>
             ))}
@@ -48,11 +45,11 @@ const Navbar = () => {
 
       <div className={`mobile-menu ${isVisible ? '' : 'hidden'}`} id="menu">
         {menus.map((item) => (
-          <div key={item.href}>
+          <div key={item.href} onClick={() => setIsVisible(!isVisible)}>
             <a href={item.href}>{item.name}</a>
           </div>
         ))}
-        <div>
+        <div onClick={() => setIsVisible(!isVisible)}>
           <a href="#hireme">
             <button className="btn box-shadow">Hire me</button>
           </a>

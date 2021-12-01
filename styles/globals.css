@@ -160,12 +160,18 @@ textarea {
 
 /* Media Query*/
 @media (max-width: 768px) {
-  .navbar {
-    padding: 23px 20px;
+  .navbar-container {
+    padding: 20px 20px;
+    z-index: 10;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    border-bottom: 0.5px solid var(--color-secondary);
   }
 
   .box {
     padding: 20px;
+    padding-top: 90px;
   }
 
   .hamburger {
