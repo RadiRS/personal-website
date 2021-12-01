@@ -20,7 +20,6 @@
 .navbar-border {
   height: 2px;
   background-color: var(--color-secondary);
-  max-width: 1440px;
   width: 100%;
   margin: 0 auto;
   opacity: 0.27;
@@ -132,4 +131,3 @@
   top: 0;
   width: 100%;
 }
-

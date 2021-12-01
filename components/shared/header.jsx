@@ -16,7 +16,7 @@ const Navbar = () => {
       <nav className="navbar">
         <div className="navbar-container">
           <Link href="/">
-            <a className="navbar-brand">{user.name}</a>
+            <a className="navbar-brand uppercase">{user.name}</a>
           </Link>
           <div className="navbar-nav-right">
             {menus.map((item) => (

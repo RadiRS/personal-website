@@ -20,6 +20,11 @@
   position: relative;
 }
 
+.img-portfolio-container:hover {
+  box-shadow: -5px 5px 6px #00000029;
+  cursor: pointer;
+}
+
 .img-profile-container {
   display: flex;
   justify-content: flex-end;
