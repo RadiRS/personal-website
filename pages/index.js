@@ -1,6 +1,6 @@
-import { Hero, Portfolio, About, Contact, Layout } from '../components';
+import {Hero, Portfolio, About, Contact, Layout} from '../components';
 
-const Home = ({ emailjs }) => {
+const Home = ({emailjs}) => {
   return (
     <Layout>
       <Hero />
