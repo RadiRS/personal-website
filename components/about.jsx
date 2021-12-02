@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 import { FaGithub, FaInstagram, FaLinkedinIn, FaCircle } from 'react-icons/fa';
 import Image from 'next/image';
 import InfoSection from './shared/info-section';
@@ -78,7 +77,12 @@ const About = () => {
             </div>
           </div>
           <div>
-            <a href="#">Get CV</a>
+            <a
+              download="cv_radi_rusadi.pdf"
+              href="../static/data/cv_radi_rusadi.pdf"
+            >
+              Get CV
+            </a>
           </div>
         </div>
         <div className="img-profile-container">
