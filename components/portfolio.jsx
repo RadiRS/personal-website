@@ -5,6 +5,12 @@ import portfolios from '../static/data/portfolios.js';
 import Link from 'next/link';
 
 const Portfolio = () => {
+  // Alternative query params
+  //const href = item => ({
+  //pathname: '/portfolio',
+  //query: {id: item.id}
+  //});
+
   return (
     <section id="portfolio" className="box">
       <div className="box-inner">
@@ -14,10 +20,10 @@ const Portfolio = () => {
           desc="Here are some of the apps I’ve worked on recently. Click on thumbnails to view case studies of each project."
         />
         <div className="grid-col-2 mt-lg">
-          {portfolios.map((item) => (
+          {portfolios.map(item => (
             <div key={item.id} className="portfolio-card">
               <div className="mb-md img-portfolio-container">
-                {/*<Link href={`/portfolio?${item.id}`} passHref>*/}
+                <Link passHref href={`/portfolio?id=${item.id}`}>
                   <Image
                     alt=""
                     layout="responsive"
@@ -26,7 +32,7 @@ const Portfolio = () => {
                     height={350}
                     src={item.images.banner}
                   />
-                {/*</Link>*/}
+                </Link>
               </div>
               <h2 className="text-lg">{item.title}</h2>
               <p className="text-md">{item.description}</p>

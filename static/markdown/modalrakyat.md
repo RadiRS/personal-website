@@ -1,7 +1,3 @@
----
-title: 'Modal Rakyat'
----
-
 # Modal Rakyat
 
 Modal Rakyat is a Peer To Peer-based investment application located in Indonesia. In this application Investors or Lenders can provide loans to several MSMEs in Indonesia to help their business.

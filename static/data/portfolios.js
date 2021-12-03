@@ -12,13 +12,14 @@ const portfolios = [
         playstore:
           'https://play.google.com/store/apps/details?id=com.modalrakyat.android'
       },
-      { appstore: 'https://apps.apple.com/id/app/modal-rakyat/id1498413893' },
-      { appgallery: 'https://appgallery.huawei.com/app/C102433621' }
+      {appstore: 'https://apps.apple.com/id/app/modal-rakyat/id1498413893'},
+      {appgallery: 'https://appgallery.huawei.com/app/C102433621'}
     ],
     images: {
       banner: '/static/images/modalrakyat.png',
       previews: []
-    }
+    },
+    content: '/static/markdown/modalrakyat.md'
   },
   {
     id: 2,
@@ -33,12 +34,13 @@ const portfolios = [
         playstore:
           'https://play.google.com/store/apps/details?id=com.warunggaibbuyer'
       },
-      { appstore: 'https://apps.apple.com/id/app/warunggaib/id1535055181' }
+      {appstore: 'https://apps.apple.com/id/app/warunggaib/id1535055181'}
     ],
     images: {
       banner: '/static/images/warunggaib.png',
       previews: []
-    }
+    },
+    content: '/static/markdown/modalrakyat.md'
   },
   {
     id: 3,
@@ -56,7 +58,8 @@ const portfolios = [
     images: {
       banner: '/static/images/otuchat.png',
       previews: []
-    }
+    },
+    content: '/static/markdown/modalrakyat.md'
   },
   {
     id: 4,
@@ -73,7 +76,8 @@ const portfolios = [
     images: {
       banner: '/static/images/newstime.png',
       previews: []
-    }
+    },
+    content: '/static/markdown/modalrakyat.md'
   }
 ];
 
