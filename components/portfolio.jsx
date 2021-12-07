@@ -10,6 +10,13 @@ const Portfolio = () => {
   //pathname: '/portfolio',
   //query: {id: item.id}
   //});
+  //
+
+  const onPressPortfolio = item => {
+    if (item.content) return `/portfolio?id=${item.id}`;
+
+    return '';
+  };
 
   return (
     <section id="portfolio" className="box">
@@ -23,7 +30,7 @@ const Portfolio = () => {
           {portfolios.map(item => (
             <div key={item.id} className="portfolio-card">
               <div className="mb-md img-portfolio-container">
-                <Link passHref href={`/portfolio?id=${item.id}`}>
+                <Link passHref href={onPressPortfolio(item)}>
                   <Image
                     alt=""
                     layout="responsive"

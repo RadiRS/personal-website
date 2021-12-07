@@ -40,7 +40,7 @@ const portfolios = [
       banner: '/static/images/warunggaib.png',
       previews: []
     },
-    content: '/static/markdown/modalrakyat.md'
+    content: '/static/markdown/warunggaib.md'
   },
   {
     id: 3,
@@ -59,7 +59,7 @@ const portfolios = [
       banner: '/static/images/otuchat.png',
       previews: []
     },
-    content: '/static/markdown/modalrakyat.md'
+    content: ''
   },
   {
     id: 4,
@@ -77,7 +77,7 @@ const portfolios = [
       banner: '/static/images/newstime.png',
       previews: []
     },
-    content: '/static/markdown/modalrakyat.md'
+    content: ''
   }
 ];
 
