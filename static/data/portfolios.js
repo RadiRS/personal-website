@@ -59,7 +59,7 @@ const portfolios = [
       banner: '/static/images/otuchat.png',
       previews: []
     },
-    content: ''
+    content: '/static/markdown/otuchat.md'
   },
   {
     id: 4,
