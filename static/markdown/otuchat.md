@@ -13,7 +13,7 @@ Here are some of the work I've done up to the last version of the app:
 
 ## Tech
 
-Modal Rakyat uses a number of open source projects to work properly:
+Otuchat uses a number of open source projects to work properly:
 
 - [React Native](https://facebook.github.io/react-native/) - Javascript framework for mobile apps!
 - [RN Background Timer](https://github.com/ocetnik/react-native-background-timer) - React native background timer
