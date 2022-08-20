@@ -1,5 +1,6 @@
 import {useEffect, useState} from 'react';
 import {useRouter} from 'next/router';
+
 import {marked} from 'marked';
 
 import portfolios from '../static/data/portfolios';
@@ -12,8 +13,8 @@ const Portfolio = () => {
   const router = useRouter();
 
   const {id} = router.query;
-  const portfolio = portfolios.filter(item => item.id == id)[0];
-  const links = portfolio.links;
+  const portfolio = portfolios?.filter(item => item.id == id)[0];
+  const links = portfolio?.links;
 
   useEffect(() => {
     fetch(portfolio.content)
@@ -34,7 +35,7 @@ const Portfolio = () => {
             src={portfolio?.images?.banner}
           />
           <div className="mt-lg">
-            {links.map(link => (
+            {links?.map(link => (
               <>
                 {link.playstore ? (
                   <a

@@ -18,7 +18,7 @@ const About = () => {
             <div className="mb-md">
               <p className="text-md">Programming Language</p>
               <div className="grid-col">
-                {user.skill.programming.map((item) => (
+                {user.skill.programming.map(item => (
                   <div key={item} className="wrapper-between-center">
                     <FaCircle color="#1E91D6" className="mr-sm" size={12} />
                     {item}
@@ -29,7 +29,7 @@ const About = () => {
             <div>
               <p className="text-md">Framework</p>
               <div className="grid-col">
-                {user.skill.framework.map((item) => (
+                {user.skill.framework.map(item => (
                   <div key={item} className="wrapper-between-center">
                     <FaCircle color="#1E91D6" className="mr-sm" size={12} />
                     {item}
@@ -40,7 +40,7 @@ const About = () => {
           </div>
           <div className="user-info mb-md">
             <p className="text-md">Bio</p>
-            {user.bio.map((item) => (
+            {user.bio.map(item => (
               <div key={item.year} className="wrapper-between">
                 <p className="mw-100 mr-lg">{item.year}</p>
                 <p>{item.event}</p>
@@ -54,24 +54,21 @@ const About = () => {
                 target="_blank"
                 rel="noreferrer"
                 className="mr-sm"
-                href={user.socials.linkedin}
-              >
+                href={user.socials.linkedin}>
                 <FaLinkedinIn color="#F2D0A4" size={33} />
               </a>
               <a
                 target="_blank"
                 rel="noreferrer"
                 className="mr-sm"
-                href={user.socials.github}
-              >
+                href={user.socials.github}>
                 <FaGithub color="#F2D0A4" size={33} />
               </a>
               <a
                 target="_blank"
                 rel="noreferrer"
                 className="mr-lg"
-                href={user.socials.instagram}
-              >
+                href={user.socials.instagram}>
                 <FaInstagram color="#F2D0A4" size={33} />
               </a>
             </div>
@@ -79,8 +76,7 @@ const About = () => {
           <div>
             <a
               download="cv_radi_rusadi.pdf"
-              href="../static/data/cv_radi_rusadi.pdf"
-            >
+              href="../static/data/cv_radi_rusadi.pdf">
               Get CV
             </a>
           </div>
