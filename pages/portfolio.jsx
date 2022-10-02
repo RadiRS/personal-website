@@ -26,12 +26,13 @@ const Portfolio = () => {
     <Layout>
       <div className="box">
         <div className="mb-lg">
-          <Image
+          <img
             alt=""
             width="100%"
             objectFit="cover"
             layout="responsive"
-            height={50}
+            height={650}
+            style={{objectFit: 'cover'}}
             src={portfolio?.images?.banner}
           />
           <div className="mt-lg">

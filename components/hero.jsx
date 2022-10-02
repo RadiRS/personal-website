@@ -15,7 +15,7 @@ const Hero = () => {
           </a>
         </div>
         <div>
-          <Image
+          <img
             width={600}
             height={490}
             src="/static/images/blogging.png"

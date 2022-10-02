@@ -31,7 +31,7 @@ const Portfolio = () => {
             <div key={item.id} className="portfolio-card">
               <div className="mb-md img-portfolio-container">
                 <Link passHref href={onPressPortfolio(item)}>
-                  <Image
+                  <img
                     alt=""
                     layout="responsive"
                     objectFit="fill"

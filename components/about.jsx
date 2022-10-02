@@ -1,4 +1,4 @@
-import { FaGithub, FaInstagram, FaLinkedinIn, FaCircle } from 'react-icons/fa';
+import {FaGithub, FaInstagram, FaLinkedinIn, FaCircle} from 'react-icons/fa';
 import Image from 'next/image';
 import InfoSection from './shared/info-section';
 
@@ -82,7 +82,7 @@ const About = () => {
           </div>
         </div>
         <div className="img-profile-container">
-          <Image
+          <img
             className="img-profile"
             alt="img-profile"
             width={340}
