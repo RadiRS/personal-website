@@ -3,13 +3,13 @@ import axios from 'axios';
 import BaseLayout from '../components/layouts/base-layout';
 
 const Home = ({initialData, data}) => {
-  console.log('initialData', initialData);
-  console.log('data', data);
+  // console.log('initialData', initialData);
+  // console.log('data', data);
 
   return (
     <BaseLayout>
       <h1>Home Page</h1>
-      <p>{data.title}</p>
+      <p>{data?.title}</p>
     </BaseLayout>
   );
 };
