@@ -1,30 +1,37 @@
-import {Hero, Portfolio, About, Contact, Layout} from '../components';
+import axios from 'axios';
 
-const Home = ({emailjs}) => {
+import BaseLayout from '../components/layouts/base-layout';
+
+const Home = ({initialData, data}) => {
+  console.log('initialData', initialData);
+  console.log('data', data);
+
   return (
-    <Layout>
-      <Hero />
-      <Portfolio />
-      <About />
-      <Contact config={emailjs} />
-    </Layout>
+    <BaseLayout>
+      <h1>Home Page</h1>
+      <p>{data.title}</p>
+    </BaseLayout>
   );
 };
 
-export const getStaticProps = () => {
-  const serviceId = process.env.REACT_APP_EMAILJS_SERVICE_ID;
-  const templateId = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
-  const userId = process.env.REACT_APP_EMAILJS_USER_ID;
-
-  const emailjs = {
-    serviceId,
-    templateId,
-    userId
-  };
+export const getStaticProps = async () => {
+  const data = await getPosts();
 
   return {
-    props: {emailjs}
+    props: {
+      initialData: [1, 2, 3, 4],
+      data
+    }
   };
+};
+
+const getPosts = async () => {
+  try {
+    const res = await axios.get('https://jsonplaceholder.typicode.com/posts');
+    return res.data;
+  } catch (error) {
+    console.log('error', error);
+  }
 };
 
 export default Home;
