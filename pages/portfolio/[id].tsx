@@ -3,8 +3,10 @@ import {useRouter} from 'next/router';
 import axios from 'axios';
 
 import BaseLayout from '../../components/layouts/base-layout';
+import {Post} from './types';
+import {GetStaticProps} from 'next/types';
 
-const Portfolio = ({post}) => {
+const Portfolio = ({post}: {post: Post}) => {
   const router = useRouter();
 
   return (
@@ -27,13 +29,13 @@ export const getStaticPaths = async () => {
   };
 };
 
-export const getStaticProps = async context => {
-  const id = context.params.id;
-  const post = await getPost(id);
+export const getStaticProps: GetStaticProps = async context => {
+  const id = context?.params?.id;
+  const post = await getPost(Number(id));
 
   return {
     props: {
-      post
+      post: post || null
     }
   };
 };
