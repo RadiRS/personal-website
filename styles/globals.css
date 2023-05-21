@@ -54,6 +54,7 @@ h1 {
 .box {
   padding: 50px 100px;
   margin-bottom: 30px;
+  border: 1px red solid;
 }
 
 .box-inner {

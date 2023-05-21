@@ -1,9 +1,10 @@
 import BaseLayout from '../components/layouts/base-layout';
+import Hero from '../components/hero';
 
 const Home = () => {
   return (
     <BaseLayout>
-      <h1>Home Page</h1>
+      <Hero />
     </BaseLayout>
   );
 };

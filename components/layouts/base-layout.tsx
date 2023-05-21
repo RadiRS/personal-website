@@ -1,5 +1,6 @@
 import React, {ReactNode} from 'react';
 import Header from '../shared/header';
+import Footer from '../shared/footer';
 
 interface BaseLayoutProps {
   children: ReactNode;
@@ -12,6 +13,7 @@ const BaseLayout: React.FC<BaseLayoutProps> = (props: BaseLayoutProps) => {
     <div>
       <Header />
       {children}
+      <Footer />
     </div>
   );
 };
