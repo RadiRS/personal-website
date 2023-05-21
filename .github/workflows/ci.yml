@@ -14,7 +14,7 @@ defaults:
     working-directory: client
 
 jobs:
-  deploy-dev:
+  ci:
     runs-on: ubuntu-latest
 
     steps:
