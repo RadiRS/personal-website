@@ -1,10 +1,9 @@
-name: Deploy Client - Development
+name: Deployment Client - Development
 
 on:
   push:
     branches:
       - develop
-      - feature/revamp
 
 # This allows a subsequently queued workflow run to interrupt previous runs
 concurrency:
@@ -16,7 +15,7 @@ defaults:
     working-directory: client
 
 jobs:
-  deploy:
+  deploy-dev:
     runs-on: ubuntu-latest
     environment:
       name: develop
