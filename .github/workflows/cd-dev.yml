@@ -45,4 +45,4 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./client/out/
-          server-dir: ./public_html/develop/
+          server-dir: /public_html/develop.paceprogrammer.com/
