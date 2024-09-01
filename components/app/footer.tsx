@@ -1,4 +1,4 @@
-import user from '@/static/data/user';
+import user from '@/lib/user';
 
 const Footer = () => {
   return (
