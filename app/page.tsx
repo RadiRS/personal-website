@@ -1,11 +1,10 @@
-import { ThemeToggle } from '@/components/app';
-
 const Home = () => {
   return (
-    <div>
-      Home
-      <ThemeToggle />
-    </div>
+    <section className='py-24'>
+      <div className='container max-w-3xl'>
+        <h1>Home Screen</h1>
+      </div>
+    </section>
   );
 };
 
