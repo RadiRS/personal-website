@@ -1,4 +1,4 @@
-name: Deployment Client - Development
+name: CD - Development
 
 on:
   push:
