@@ -1,10 +1,10 @@
-import { Button } from '@/components/ui/button';
+import { ThemeToggle } from '@/components/app';
 
 const Home = () => {
   return (
     <div>
       Home
-      <Button>Click Me</Button>
+      <ThemeToggle />
     </div>
   );
 };
