@@ -4,15 +4,14 @@ on:
   push:
     branches:
       - develop
+      - feature/revamp
 
 # This allows a subsequently queued workflow run to interrupt previous runs
 concurrency:
-  group: "${{ github.workflow }} @ ${{ github.event.pull_request.head.label || github.head_ref || github.ref }}"
+  group:
+    '${{ github.workflow }} @ ${{ github.event.pull_request.head.label ||
+    github.head_ref || github.ref }}'
   cancel-in-progress: true
-
-defaults:
-  run:
-    working-directory: client
 
 jobs:
   deploy-dev:
@@ -43,5 +42,5 @@ jobs:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./client/out/
+          local-dir: ./out/
           server-dir: ./develop/
