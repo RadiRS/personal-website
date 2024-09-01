@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import { useTheme } from 'next-themes';
 import { Button } from '@/components/ui';
+import { MoonIcon, SunIcon } from '@radix-ui/react-icons';
 
 const ThemeToggle = () => {
   const { setTheme, resolvedTheme } = useTheme();
@@ -14,15 +15,22 @@ const ThemeToggle = () => {
 
   if (!mounted) return null;
 
+  const isDark = resolvedTheme === 'dark';
+
   const handleToggleTheme = () => {
-    const theme = resolvedTheme === 'dark' ? 'light' : 'dark';
+    const theme = isDark ? 'light' : 'dark';
 
     setTheme(theme);
   };
 
   return (
     <Button size='sm' variant='ghost' onClick={handleToggleTheme}>
-      <span>Toggle theme</span>
+      {isDark ? (
+        <SunIcon className='size-4 text-orange-300' />
+      ) : (
+        <MoonIcon className='size-4 text-sky-950' />
+      )}
+      <span className='sr-only'>Toggle theme</span>
     </Button>
   );
 };
