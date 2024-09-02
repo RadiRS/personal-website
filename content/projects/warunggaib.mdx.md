@@ -1,30 +1,59 @@
-# Warunggaib
+---
+title:
+  'Warunggaib: A Unique Marketplace for Antique and Traditional Indonesian Items'
+summary:
+  'Discover the journey behind the development of Warunggaib, an Indonesian
+  online marketplace specializing in antiques and traditional items, from
+  concept to successful launch.'
+image: '/images/posts/warunggaib-development.jpg'
+author: 'Radi Rusadi'
+publishedAt: '2024-09-02'
+---
 
-Warunggaib is one of the online marketplaces in Indonesia. However, this marketplace has its own uniqueness, namely selling antiques and traditional Indonesian characteristics. The target of this market is usually collectors who like to collect antiques.
+## Warunggaib
 
-## Process
+Warunggaib is a distinctive online marketplace in Indonesia, catering to
+collectors and enthusiasts of antiques and traditional Indonesian artifacts.
+Unlike conventional marketplaces, Warunggaib offers a specialized platform for
+those who appreciate the cultural heritage and uniqueness of these items.
 
-This app was developed from scratch. I developed this application based on all the experiences from previous projects. The time required from initial development to release takes one year. Here are some features I've worked on in app development:
+## Development Process
 
-- Implementation of the UI into the application
-- Integration with API and Back End Team
-- User authentication (Email, Google, Apple & FB)
-- Global state management
-- User transactions
-- Release to PlayStore & AppStore
-- etc..
+The development of Warunggaib started from scratch, leveraging the experiences
+gained from previous projects. It took approximately one year to bring this
+application from initial concept to release. Here are some of the key features I
+worked on during the app’s development:
 
-## Tech
+- **UI Implementation**: Developed a user-friendly interface that enhances the
+  shopping experience.
+- **API Integration**: Worked closely with the Back-End team to ensure seamless
+  data flow.
+- **User Authentication**: Integrated multiple authentication options, including
+  Email, Google, Apple, and Facebook.
+- **Global State Management**: Implemented a scalable state management solution.
+- **User Transactions**: Enabled secure and efficient transaction processes.
+- **Release**: Successfully launched the app on the PlayStore and AppStore.
 
-Warunggaib uses a number of open source projects to work properly:
+## Technology Stack
 
-- [React Native](https://facebook.github.io/react-native/) - Javascript framework for mobile apps!
-- [Firebase](https://firebase.google.com) - Google-backed application development for iOS, Android and Web apps.
-- [App Center](https://appcenter.ms) - Continuously build, test, release, and monitor apps for every platform.
-- [React Navigation](https://reactnavigation.org/) - Routing and navigation for Expo and React Native apps.
-- [Redux](https://redux.js.org/) - A Predictable State Container for JS Apps
-- [One Signal](https://onesignal.com/) - Customer engagement solution for Push Notifications, Email, SMS & In-App.
+Warunggaib utilizes a robust set of open-source technologies to deliver a
+seamless user experience:
 
-## Result
+- [React Native](https://facebook.github.io/react-native/) - A JavaScript
+  framework for building native mobile apps.
+- [Firebase](https://firebase.google.com) - A comprehensive development platform
+  backed by Google for iOS, Android, and web apps.
+- [App Center](https://appcenter.ms) - A platform for continuous build, test,
+  release, and monitoring of apps across multiple platforms.
+- [React Navigation](https://reactnavigation.org/) - A navigation library for
+  React Native and Expo apps.
+- [Redux](https://redux.js.org/) - A predictable state container for JavaScript
+  apps.
+- [One Signal](https://onesignal.com/) - A customer engagement solution for push
+  notifications, email, SMS, and in-app messaging.
 
-After going through various challenges and revisions, the application can finally be released to the public. This has been a valuable experience where I can work with a solid team and can contribute to their product development.
+## Outcome
+
+After overcoming numerous challenges and iterations, Warunggaib was successfully
+launched to the public. The experience of working with a dedicated team and
+contributing to this unique project has been incredibly rewarding.
