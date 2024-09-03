@@ -4,13 +4,13 @@ import { formatDate } from '@/lib/utils';
 import { ProjectMetaData } from '@/lib/project';
 
 type ProjectsProps = {
-  data: ProjectMetaData[];
+  data?: ProjectMetaData[];
 };
 
 const Projects = ({ data }: ProjectsProps) => {
   return (
     <ul className='flex flex-col gap-8'>
-      {data.map(project => (
+      {data?.map(project => (
         <li key={project.slug}>
           <Link
             href={`/projects/${project.slug}`}

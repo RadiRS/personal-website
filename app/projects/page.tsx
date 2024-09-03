@@ -1,5 +1,5 @@
-import { Projects } from '@/components/app';
 import { getProjects } from '@/lib/project';
+import { ProjectsWithSearch } from '@/components/app';
 
 const ProjectsPage = async () => {
   const projects = await getProjects();
@@ -8,8 +8,7 @@ const ProjectsPage = async () => {
     <section className='pb-24 pt-40'>
       <div className='container max-w-3xl'>
         <h1 className='title mb-12'>Projects</h1>
-
-        <Projects data={projects} />
+        <ProjectsWithSearch data={projects} />
       </div>
     </section>
   );
