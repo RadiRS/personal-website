@@ -1,8 +1,7 @@
 const user = {
   name: 'Radi Rusadi',
-  avatar: '/static/images/profile.png',
-  intro:
-    'I’m a Mobile Developer\nBuilding mobile application through Flutter and React Native',
+  avatar: '/images/profile.png',
+  intro: 'Hi, I am Radi',
   description:
     'I’m a Mobile Developer from Indonesia.\nBuilding apps using platform like React Native and Flutter.\nI love playing guitar, swimming and basketball',
   bio: [

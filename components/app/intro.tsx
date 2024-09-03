@@ -1,15 +1,15 @@
 import React from 'react';
 import Image from 'next/image';
 
-import profileImg from '../public/images/profile.png';
+import user from '@/lib/user';
 
 const Intro = () => {
   return (
     <section className='flex flex-row items-start gap-x-10 gap-y-4'>
       <div className='mt-2 flex-1 md:mt-0'>
-        <h1 className='title no-underline'>Hey, I&apos;m Radi.</h1>
+        <h1 className='title no-underline'>{user.intro}</h1>
         <p className='mt-3 font-light text-muted-foreground'>
-          I&apos;m a software engineer based in Jakarta, Indonesia.
+          {user.description}
         </p>
       </div>
       <div className='relative'>
@@ -19,7 +19,7 @@ const Intro = () => {
           width={175}
           height={175}
           className='flex-1 rounded-lg grayscale'
-          src={profileImg}
+          src={user.avatar}
         />
       </div>
     </section>
