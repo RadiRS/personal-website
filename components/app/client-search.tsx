@@ -23,7 +23,7 @@ const ClientSearch = <T,>({
   const isFiltered = query.length > 0;
 
   // Filter the data based on the query
-  const filtered = data.filter(item =>
+  const filtered = data?.filter(item =>
     item?.[searchKey]?.toString().toLowerCase().includes(query.toLowerCase()),
   );
 
@@ -51,7 +51,7 @@ const ClientSearch = <T,>({
       </div>
 
       {/* Clone content and pass the filtered data */}
-      {cloneElement(Content, { data: filtered })}
+      {cloneElement(Content, { data: filtered || [] })}
     </div>
   );
 };
