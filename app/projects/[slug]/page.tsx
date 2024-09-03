@@ -59,7 +59,11 @@ const ProjectDetailPage = async ({ params }: ProjectDetailPage) => {
 };
 
 export const generateStaticParams = () => {
-  const projects = [{ slug: 'modalrakyat' }];
+  const projects = [
+    { slug: 'modalrakyat' },
+    { slug: 'warunggaib' },
+    { slug: 'otuchat' },
+  ];
 
   const slugs = projects.map(project => ({
     slug: project.slug,
