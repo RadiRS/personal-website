@@ -1,5 +1,5 @@
+import { Projects, ProjectsWithSearch } from '@/components/app';
 import { getProjects } from '@/lib/project';
-import { ProjectsWithSearch } from '@/components/app';
 
 const ProjectsPage = async () => {
   const projects = await getProjects();

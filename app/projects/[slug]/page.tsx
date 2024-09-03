@@ -3,8 +3,8 @@ import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { ArrowLeftIcon } from '@radix-ui/react-icons';
 
-import { getProjectById } from '@/lib/project';
 import { formatDate } from '@/lib/utils';
+import { getProjectById, getProjects } from '@/lib/project';
 import { MDXContent } from '@/components/app';
 
 type ProjectDetailPage = {
@@ -58,12 +58,8 @@ const ProjectDetailPage = async ({ params }: ProjectDetailPage) => {
   );
 };
 
-export const generateStaticParams = () => {
-  const projects = [
-    { slug: 'modalrakyat' },
-    { slug: 'warunggaib' },
-    { slug: 'otuchat' },
-  ];
+export const generateStaticParams = async () => {
+  const projects = await getProjects();
 
   const slugs = projects.map(project => ({
     slug: project.slug,
