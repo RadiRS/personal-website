@@ -1,7 +1,8 @@
 import Link from 'next/link';
 
-import Projects from './projects';
 import { getProjects } from '@/lib/project';
+
+import Projects from './projects';
 
 const RecentProjects = async () => {
   const projects = await getProjects(4);

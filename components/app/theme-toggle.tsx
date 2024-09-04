@@ -2,8 +2,9 @@
 
 import React, { useEffect, useState } from 'react';
 import { useTheme } from 'next-themes';
-import { Button } from '@/components/ui';
 import { MoonIcon, SunIcon } from '@radix-ui/react-icons';
+
+import { Button } from '@/components/ui';
 
 const ThemeToggle = () => {
   const { setTheme, resolvedTheme } = useTheme();
