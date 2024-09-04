@@ -7,11 +7,11 @@ import { formatDate } from '@/lib/utils';
 import { getProjectById, getProjects } from '@/lib/project';
 import { MDXContent } from '@/components/app';
 
-type ProjectDetailPage = {
+type ProjectDetailPageProps = {
   params: { slug: string };
 };
 
-const ProjectDetailPage = async ({ params }: ProjectDetailPage) => {
+const ProjectDetailPage = async ({ params }: ProjectDetailPageProps) => {
   const { slug } = params;
 
   const project = await getProjectById(slug);
@@ -67,5 +67,32 @@ export const generateStaticParams = async () => {
 
   return slugs;
 };
+
+import type { Metadata } from 'next';
+
+export async function generateMetadata({
+  params,
+}: ProjectDetailPageProps): Promise<Metadata> {
+  // read route params
+  const slug = params.slug;
+
+  // fetch data
+  const project = await getProjectById(slug);
+
+  return {
+    title: project?.metadata?.title,
+    description: project?.metadata.summary,
+    twitter: {
+      title: project?.metadata?.title,
+      description: project?.metadata.summary,
+      images: [project?.metadata.image || ''],
+    },
+    openGraph: {
+      title: project?.metadata?.title,
+      description: project?.metadata.summary,
+      images: [project?.metadata.image || ''],
+    },
+  };
+}
 
 export default ProjectDetailPage;
