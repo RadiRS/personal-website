@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - develop
-      - feature/revamp
 
 # This allows a subsequently queued workflow run to interrupt previous runs
 concurrency:
