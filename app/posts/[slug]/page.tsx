@@ -11,8 +11,12 @@ type PostDetailPageProps = {
   params: { slug: string };
 };
 
+const EMPTY = 'EMPTY';
+
 const PostDetailPage = async ({ params }: PostDetailPageProps) => {
   const { slug } = params;
+
+  if (slug === EMPTY) return notFound();
 
   const posts = await getPostById(slug);
 
@@ -60,6 +64,9 @@ const PostDetailPage = async ({ params }: PostDetailPageProps) => {
 
 export const generateStaticParams = async () => {
   const posts = await getPosts();
+
+  // Require to prevent build error for empty content
+  if (!posts.length) return [{ slug: EMPTY }];
 
   const slugs = posts.map(post => ({
     slug: post.slug,

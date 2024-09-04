@@ -2,10 +2,10 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 import { formatDate } from '@/lib/utils';
-import { ProjectMetaData } from '@/lib/project';
+import { Metadata } from '@/lib/content';
 
 type ProjectsProps = {
-  data?: ProjectMetaData[];
+  data?: Metadata[];
 };
 
 const Projects = ({ data }: ProjectsProps) => {
