@@ -1,8 +1,27 @@
 <IfModule mod_rewrite.c>
-  RewriteEngine On
-  RewriteBase /
-  RewriteRule ^index\.html$ - [L]
-  RewriteCond %{REQUEST_FILENAME} !-f
-  RewriteCond %{REQUEST_FILENAME} !-d
-  RewriteRule . /index.html [L]
+    # Enable symbolic links and disable MultiViews
+    Options +FollowSymLinks -MultiViews
+
+    # Turn on the rewrite engine
+    RewriteEngine On
+
+    # If the requested URL is a directory, append .html to the URL
+    RewriteCond %{REQUEST_FILENAME} -d
+    RewriteRule ^(.*)/$ $1.html
+
+    # If the requested URL with .html appended exists as a file, rewrite the URL to include .html
+    RewriteCond %{REQUEST_FILENAME}.html -f
+    RewriteRule !.*\.html$ %{REQUEST_FILENAME}.html [L]
+
+    # If the requested URL is not a directory and the file with .html appended exists, rewrite the URL to include .html
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME}\.html -f
+    RewriteRule ^(.*)$ $1.html [NC,L]
+
+    # Protect .git directories and files from being accessed
+    RewriteRule ^.*/?\.git+ - [F,L]
+
+    # If the request is not using HTTPS, redirect to the HTTPS version of the URL
+    RewriteCond %{ENV:HTTPS} !on
+    RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 </IfModule>
