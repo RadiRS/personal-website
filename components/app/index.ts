@@ -7,4 +7,6 @@ export { default as Projects } from './projects';
 export { default as ClientSearch } from './client-search';
 export { default as ProjectsWithSearch } from './projects-with-search';
 export { default as RecentProjects } from './recent-projects';
+export { default as RecentPosts } from './recent-posts';
 export { default as Intro } from './intro';
+export { default as Posts } from './posts';
