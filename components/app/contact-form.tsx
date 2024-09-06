@@ -9,7 +9,8 @@ import { Button, Input, Textarea } from '../ui';
 const ContactFormSchema = z.object({
   name: z.string().min(1, { message: 'Required' }),
   email: z
-    .string({ message: 'Required' })
+    .string()
+    .min(1, { message: 'Required' })
     .email({ message: 'Please enter a valid email' }),
   message: z.string().min(1, { message: 'Required' }),
 });
@@ -17,7 +18,12 @@ const ContactFormSchema = z.object({
 type ContactFormState = z.infer<typeof ContactFormSchema>;
 
 const ContactForm = () => {
-  const { register, handleSubmit, reset } = useForm<ContactFormState>({
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm<ContactFormState>({
     resolver: zodResolver(ContactFormSchema),
   });
 
@@ -29,15 +35,26 @@ const ContactForm = () => {
 
   return (
     <div>
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <Input placeholder='Name' className='mb-2' {...register('name')} />
-        <Input placeholder='Email' className='mb-2' {...register('email')} />
+      <form onSubmit={handleSubmit(onSubmit)} className='flex flex-col gap-4'>
+        <Input
+          placeholder='Name'
+          error={errors.name?.message}
+          {...register('name')}
+        />
+        <Input
+          placeholder='Email'
+          error={errors.email?.message}
+          {...register('email')}
+        />
         <Textarea
           placeholder='Message'
-          className='mb-2'
+          rows={4}
+          error={errors.message?.message}
           {...register('message')}
         />
-        <Button>Submit</Button>
+        <div className='flex justify-end'>
+          <Button className='w-1/3'>Submit</Button>
+        </div>
       </form>
     </div>
   );
