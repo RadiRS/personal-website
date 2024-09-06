@@ -10,3 +10,4 @@ export { default as RecentProjects } from './recent-projects';
 export { default as RecentPosts } from './recent-posts';
 export { default as Intro } from './intro';
 export { default as Posts } from './posts';
+export { default as ContactForm } from './contact-form';

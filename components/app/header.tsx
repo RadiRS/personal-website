@@ -19,7 +19,7 @@ const paths = [
 
   {
     href: '/contact',
-    label: 'Contect',
+    label: 'Contact',
   },
 ];
 
