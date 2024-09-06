@@ -5,14 +5,14 @@ import user from '@/lib/user';
 
 const Intro = () => {
   return (
-    <section className='flex flex-row items-start gap-x-10 gap-y-4'>
+    <section className='flex flex-row items-start gap-x-10 gap-y-4 pb-24'>
       <div className='mt-2 flex-1 md:mt-0'>
         <h1 className='title no-underline'>{user.intro}</h1>
         <p className='mt-3 font-light text-muted-foreground'>
           {user.description}
         </p>
       </div>
-      <div className='relative'>
+      <div className='relative hidden md:block lg:block'>
         <Image
           priority
           alt='Radi Rusadi'

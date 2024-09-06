@@ -7,6 +7,8 @@ import Projects from './projects';
 const RecentProjects = async () => {
   const projects = await getProjects(4);
 
+  if (!projects.length) return null;
+
   return (
     <section className='pb-24'>
       <h1 className='title mb-12'>Recent Projects</h1>
