@@ -4,7 +4,9 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 
+import { emailjsInit, emailjsSend } from '@/lib/email';
 import { Button, Input, Textarea } from '../ui';
+import { toast } from 'react-toastify';
 
 const ContactFormSchema = z.object({
   name: z.string().min(1, { message: 'Required' }),
@@ -17,6 +19,8 @@ const ContactFormSchema = z.object({
 
 type ContactFormState = z.infer<typeof ContactFormSchema>;
 
+emailjsInit();
+
 const ContactForm = () => {
   const {
     register,
@@ -27,10 +31,21 @@ const ContactForm = () => {
     resolver: zodResolver(ContactFormSchema),
   });
 
-  const onSubmit = (values: ContactFormState) => {
-    // TODO: Handle send email provider
-    console.log('values:', values);
-    reset();
+  const onSubmit = async (values: ContactFormState) => {
+    try {
+      const template = {
+        from_name: values.name,
+        from_email: values.email,
+        message: values.message,
+      };
+
+      await emailjsSend(template);
+
+      reset();
+      toast.success('Thank you!');
+    } catch {
+      toast.error('Something wrong!');
+    }
   };
 
   return (
