@@ -18,7 +18,7 @@ const Intro = () => {
           alt='Radi Rusadi'
           width={175}
           height={175}
-          className='flex-1 rounded-lg grayscale'
+          className='flex-1'
           src={user.avatar}
         />
       </div>
