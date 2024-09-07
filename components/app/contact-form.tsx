@@ -7,6 +7,7 @@ import { toast } from 'sonner';
 
 import { emailjsInit, emailjsSend } from '@/lib/email';
 import { Button, Input, Textarea } from '../ui';
+import { Loader2 } from 'lucide-react';
 
 const ContactFormSchema = z.object({
   name: z.string().min(1, { message: 'Required' }),
@@ -26,10 +27,12 @@ const ContactForm = () => {
     register,
     handleSubmit,
     reset,
-    formState: { errors },
+    formState: { errors, isSubmitting },
   } = useForm<ContactFormState>({
     resolver: zodResolver(ContactFormSchema),
   });
+
+  console.log('isSubmitted:', isSubmitting);
 
   const onSubmit = async (values: ContactFormState) => {
     try {
@@ -68,7 +71,9 @@ const ContactForm = () => {
           {...register('message')}
         />
         <div className='flex justify-end'>
-          <Button className='w-1/3'>Submit</Button>
+          <Button disabled={isSubmitting} className='w-1/3'>
+            {isSubmitting ? <Loader2 className='animate-spin' /> : 'Submit'}
+          </Button>
         </div>
       </form>
     </div>
