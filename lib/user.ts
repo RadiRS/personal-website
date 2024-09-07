@@ -3,7 +3,7 @@ const user = {
   avatar: '/images/profile.png',
   intro: 'Hi, I am Radi',
   description:
-    'I’m a Mobile Developer from Indonesia.\nBuilding apps using platform like React Native and Flutter.\nI love playing guitar, swimming and basketball',
+    'I’m a Software Engineer from Indonesia with over 5 years of experience. Explore my work and journey as I continue to create and innovate in the tech world.',
   bio: [
     { year: '1996', event: 'Born in Sorong, Indonesia' },
     {
@@ -15,8 +15,8 @@ const user = {
     { year: '2022 \n to Current', event: 'Worked at Populix.' },
   ],
   skill: {
-    programming: ['Javascript', 'Typescript', 'Dart'],
-    framework: ['ReactJS', 'NextJS', 'React Native', 'Flutter'],
+    programming: ['Javascript', 'Typescript'],
+    framework: ['ReactJS', 'NextJS', 'React Native'],
     tools: [
       'Firebase',
       'Supabase',
@@ -36,7 +36,7 @@ const user = {
     linkedin: 'https://www.linkedin.com/in/radi-rusadi',
     instagram: 'https://www.instagram.com/radi.rusadi.s',
   },
-  link_cv: '',
+  link_cv: './cv_radi_rusadi.pdf',
 };
 
 export default user;
