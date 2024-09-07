@@ -27,6 +27,18 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Cache dependencies
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.bun
+            ${{ github.workspace }}/.next/cache
+          key:
+            ${{ runner.os }}-nextjs-${{ hashFiles('**/bun.lockb') }}-${{
+            hashFiles('**/*.js', '**/*.jsx', '**/*.ts', '**/*.tsx') }}
+          restore-keys: |
+            ${{ runner.os }}-nextjs-${{ hashFiles('**/bun.lockb') }}-
+
       - name: Setup Bun environment
         uses: oven-sh/setup-bun@v2
         with:
