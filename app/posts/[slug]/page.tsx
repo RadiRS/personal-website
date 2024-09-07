@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import type { Metadata } from 'next';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { ArrowLeftIcon } from '@radix-ui/react-icons';
@@ -74,5 +75,30 @@ export const generateStaticParams = async () => {
 
   return slugs;
 };
+
+export async function generateMetadata({
+  params,
+}: PostDetailPageProps): Promise<Metadata> {
+  // read route params
+  const slug = params.slug;
+
+  // fetch data
+  const project = await getPostById(slug);
+
+  return {
+    title: project?.metadata?.title,
+    description: project?.metadata.summary,
+    twitter: {
+      title: project?.metadata?.title,
+      description: project?.metadata.summary,
+      images: [project?.metadata.image || ''],
+    },
+    openGraph: {
+      title: project?.metadata?.title,
+      description: project?.metadata.summary,
+      images: [project?.metadata.image || ''],
+    },
+  };
+}
 
 export default PostDetailPage;

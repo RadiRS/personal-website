@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { ArrowLeftIcon } from '@radix-ui/react-icons';
 
@@ -67,8 +68,6 @@ export const generateStaticParams = async () => {
 
   return slugs;
 };
-
-import type { Metadata } from 'next';
 
 export async function generateMetadata({
   params,
