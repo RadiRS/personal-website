@@ -1,0 +1,116 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+
+  /*code color*/
+  --sh-class: #2d5e9d;
+  --sh-sign: #8996a3;
+  --sh-property: #0550ae;
+  --sh-entity: #249a97;
+  --sh-jsxliterals: #6266d1;
+  --sh-string: #00a99a;
+  --sh-keyword: #f47067;
+  --sh-comment: #a19595;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@layer base {
+  :root {
+    --background: 26 100% 95%;
+    --foreground: 26 5% 0%;
+    --card: 26 50% 90%;
+    --card-foreground: 26 5% 10%;
+    --popover: 26 100% 95%;
+    --popover-foreground: 26 100% 0%;
+    --primary: 26 58% 23.3%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 26 30% 70%;
+    --secondary-foreground: 0 0% 0%;
+    --muted: -12 30% 85%;
+    --muted-foreground: 26 5% 35%;
+    --accent: -12 30% 80%;
+    --accent-foreground: 26 5% 10%;
+    --destructive: 0 100% 30%;
+    --destructive-foreground: 26 5% 90%;
+    --border: 26 30% 50%;
+    --input: 26 30% 18%;
+    --ring: 26 58% 23.3%;
+    --radius: 0.5rem;
+
+    /*code color*/
+    --sh-identifier: #354150;
+  }
+  .dark {
+    --background: 26 50% 5%;
+    --foreground: 26 5% 90%;
+    --card: 26 50% 0%;
+    --card-foreground: 26 5% 90%;
+    --popover: 26 50% 5%;
+    --popover-foreground: 26 5% 90%;
+    --primary: 26 58% 23.3%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 26 30% 10%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: -12 30% 15%;
+    --muted-foreground: 26 5% 60%;
+    --accent: -12 30% 15%;
+    --accent-foreground: 26 5% 90%;
+    --destructive: 0 100% 30%;
+    --destructive-foreground: 26 5% 90%;
+    --border: 26 30% 18%;
+    --input: 26 30% 18%;
+    --ring: 26 58% 23.3%;
+    --radius: 0.5rem;
+
+    /*code color*/
+    --sh-identifier: #fffff;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  .title {
+    @apply text-3xl font-bold underline decoration-border/75 decoration-2 underline-offset-8;
+  }
+
+  .prose pre {
+    @apply overflow-x-auto rounded-lg bg-accent px-5 py-4 text-sm;
+  }
+
+  .prose code {
+    @apply rounded-lg px-1 py-0.5;
+  }
+
+  .prose pre code {
+    @apply p-0;
+    line-height: 1.75;
+  }
+
+  .prose code span {
+    @apply font-medium;
+  }
+}

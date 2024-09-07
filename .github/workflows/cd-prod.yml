@@ -1,0 +1,60 @@
+name: CD - Production
+
+on:
+  push:
+    branches:
+      - main
+
+# This allows a subsequently queued workflow run to interrupt previous runs
+concurrency:
+  group:
+    '${{ github.workflow }} @ ${{ github.event.pull_request.head.label ||
+    github.head_ref || github.ref }}'
+  cancel-in-progress: true
+
+jobs:
+  deploy-prod:
+    runs-on: ubuntu-latest
+    environment:
+      name: production
+    env:
+      NEXT_PUBLIC_EMAILJS_PUBLIC_KEY: ${{ vars.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY }}
+      NEXT_PUBLIC_EMAILJS_SERVICE_ID: ${{ vars.NEXT_PUBLIC_EMAILJS_SERVICE_ID }}
+      NEXT_PUBLIC_EMAILJS_TEMPLATE_ID:
+        ${{ vars.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID }}
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Cache dependencies
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.bun
+            ${{ github.workspace }}/.next/cache
+          key:
+            ${{ runner.os }}-nextjs-${{ hashFiles('**/bun.lockb') }}-${{
+            hashFiles('**/*.js', '**/*.jsx', '**/*.ts', '**/*.tsx') }}
+          restore-keys: |
+            ${{ runner.os }}-nextjs-${{ hashFiles('**/bun.lockb') }}-
+
+      - name: Setup Bun environment
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: Install dependencies
+        run: bun install
+
+      - name: Build Next.js project
+        run: bun run build
+
+      - name: Sync files
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./out/
+          server-dir: ./
