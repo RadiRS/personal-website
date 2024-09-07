@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import { Poppins } from 'next/font/google';
 import './globals.css';
-import { ToastContainer } from 'react-toastify';
 
 import { cn } from '@/lib/utils';
 import { Footer, Header, Providers } from '@/components/app';
@@ -30,7 +29,6 @@ export default function RootLayout({
           <Header />
           <main className='grow'>{children}</main>
           <Footer />
-          <ToastContainer />
         </Providers>
       </body>
     </html>

@@ -2,6 +2,7 @@
 
 import { PropsWithChildren } from 'react';
 import { ThemeProvider } from 'next-themes';
+import Toaster from './toaster';
 
 const Providers = ({ children }: PropsWithChildren) => {
   return (
@@ -12,6 +13,7 @@ const Providers = ({ children }: PropsWithChildren) => {
       disableTransitionOnChange
     >
       {children}
+      <Toaster />
     </ThemeProvider>
   );
 };
