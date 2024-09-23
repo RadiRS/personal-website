@@ -1,25 +1,135 @@
 ---
-title: 'Intro to React'
-summary: 'Introduction to react and know more about react before you dive in'
-image: https://img.freepik.com/free-vector/hand-drawn-web-developers_23-2148819604.jpg?t=st=1725617079~exp=1725620679~hmac=dab5cc8f5749e1fe46a0aed6eea683457e0caa6020238e351c03a4d3037b9ce1&w=1380
+title: 'Intro to React: A Beginner’s Guide'
+summary:
+  'Learn the basics of ReactJS, a popular library for building user interfaces,
+  and how it differs from VanillaJS.'
+image: /images/posts/intro-to-react.jpg
 author: 'Radi Rusadi'
 publishedAt: '2024-09-20'
 ---
 
 ### Introduction
 
-React is a Javascript library for building user interfaces. Extremely popular
-declarative, component-based, state-driven javascript library for builder user
-interfaces, created by Facebook.
+React is a popular JavaScript library for building user interfaces. Created by
+Facebook, it’s widely used due to its **component-based**, **declarative**, and
+**state-driven** nature.
 
-- Based on components: Components are the building block of user interfaces in
-  React.
-- Declarative: how components look like and how they work using a declarative
-  syntax called **JSX** based on current **data/state**. JSX is a syntax that
-  combines HTML, CSS, Javascript as well as referencing other components.
-- State-driven: react to state changes by re-rendering the UI.
+- **Component-based**: UI is broken down into small, reusable pieces like
+  headers, footers, and buttons.
+  ![web-layout-component](/images/posts/component-web-layout.png)
 
-### Is React a library or a framework?
+- **Declarative**: React uses **JSX** syntax, combining HTML, CSS, and
+  JavaScript to define the UI based on data and state.
+  ![jsx-component](/images/posts/jsx-component.png)
 
-React is a library because it is only the “view” layer. We need to pick multiple
-external libraries to build a complete application.
+- **State-driven**: React automatically updates the UI when data (state)
+  changes. ![react-to-state](/images/posts/state-react-to-ui.png)
+
+### Is React a Library or Framework?
+
+React is a **library** focused only on the “view” layer. For building full
+applications, developers need additional tools like routing or state management
+libraries.
+
+### Starting a React Project
+
+Here are popular tools to start a React project:
+
+- [Create React App (CRA)](https://create-react-app.dev): Recommended for
+  beginners, but for production, it's suggested to use frameworks like Next.js.
+- [Vite](https://vitejs.dev): A fast, modern alternative with built-in
+  TypeScript and ESLint support.
+- [Next.js](https://nextjs.org): A React framework with advanced features like
+  **SEO optimization**, **server-side rendering**, and routing. Great for
+  building full-stack apps.
+
+Other React-based tools include [Remix](https://remix.run/) and
+[Gatsby](https://www.gatsbyjs.com/).
+
+### React vs. Vanilla JavaScript
+
+Below is a comparison of traditional VanillaJS and React.
+
+**VanillaJS Example**:
+
+```html
+<body>
+  <div class="container">
+    <div id="value">0</div>
+    <div>
+      <button id="more">+</button>
+      <button id="less">-</button>
+    </div>
+  </div>
+</body>
+<script>
+  const value = document.querySelector('#value');
+  const more = document.querySelector('#more');
+  const less = document.querySelector('#less');
+
+  const incrementHandler = () => {
+    value.textContent = +value.textContent + 1;
+  };
+
+  const decrementHandler = () => {
+    value.textContent = +value.textContent - 1;
+  };
+
+  more.addEventListener('click', incrementHandler);
+  less.addEventListener('click', decrementHandler);
+</script>
+```
+
+**ReactJS Example**:
+
+```jsx
+const Counter = () => {
+  const [counter, setCounter] = useState(0);
+
+  return (
+    <div className='container'>
+      <div>{counter}</div>
+      <div>
+        <button onClick={() => setCounter(counter + 1)}>+</button>
+        <button onClick={() => setCounter(counter - 1)}>-</button>
+      </div>
+    </div>
+  );
+};
+```
+
+As shown, React code is more concise, reusable, and easier to manage, especially
+for larger applications.
+
+### ReactJS vs. VanillaJS: Key Differences
+
+1. **UI Building**:
+
+   - **ReactJS**: Reusable components.
+   - **VanillaJS**: Repeated DOM manipulation.
+
+2. **DOM Manipulation**:
+
+   - **ReactJS**: Uses a virtual DOM for better performance.
+   - **VanillaJS**: Direct DOM access can slow down larger applications.
+
+3. **State Management**:
+
+   - **ReactJS**: State updates automatically trigger UI changes.
+   - **VanillaJS**: Requires manual tracking and updates.
+
+4. **Learning Curve**:
+
+   - **ReactJS**: Requires learning JSX, hooks, and React-specific tools.
+   - **VanillaJS**: Easier to start but harder to scale.
+
+5. **Ecosystem**:
+   - **ReactJS**: Rich ecosystem with built-in tools.
+   - **VanillaJS**: Requires custom solutions or third-party libraries.
+
+### Summary
+
+ReactJS offers a modern, efficient way to build dynamic, scalable web apps,
+especially compared to VanillaJS, which can become cumbersome for larger
+projects. It excels with reusable components, state management, and a rich
+ecosystem, making it ideal for more complex applications.
